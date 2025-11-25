@@ -7,10 +7,11 @@ Nothing fancy—just a repo to keep useful scripts in one place, make them reusa
 
 ```
 utils/
-├── analysis/ # data processing, statistics, filters, small helpers
-├── plotting/ # plotting scripts, figure templates, quick visualization tools
-├── workflow/ # batch runners, automation helpers
-└── misc/ # everything that doesn’t fit elsewhere
+├── analysis/                        # data processing, statistics, filters, small helpers
+│   └── df_excited_states.ipynb       # parser for excited-state output files
+├── plotting/                        # plotting scripts, figure templates, quick visualization tools
+├── workflow/                        # batch runners, automation helpers
+└── misc/                            # everything that doesn’t fit elsewhere
 ```
 
 ## License
