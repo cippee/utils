@@ -18,9 +18,15 @@ cfg.spectrumType = 'uv-abs';
 
 %% ---- Preprocessing ------------------------------------------------------
 
-cfg.normalizeSpectrum = false;      % normalizza su max(|y|)
+cfg.normalizeSpectrum = true;       % normalizza su max(|y|)
 cfg.applySmoothing    = false;      % Savitzky-Golay smoothing
 cfg.smoothingWindow   = 7;          % finestra smoothing (dispari)
+
+%% ---- Layout --------------------------------------------------------------
+%  false -> tutti gli spettri sovrapposti sugli stessi assi
+%  true  -> un subplot per spettro, impilati verticalmente
+
+cfg.stackPlots = false;
 
 %% ---- Grafica ------------------------------------------------------------
 
