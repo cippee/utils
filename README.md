@@ -11,7 +11,8 @@ utils/
 │   ├── df_excited_states.ipynb      # parser for excited-state output files
 │   └── df_contacts_h5.ipynb         # parser for contacts analysis of h5md sieve.x output
 ├── quickplot/                       # plotting scripts, figure templates, quick visualization tools
-│   └── raman-ir                     # main.m plots all ir/raman spectral data in './data'
+│   ├── raman-ir/                    # main.m plots all ir/raman spectral data in './data'
+│   └── uv/                          # main.m plots all uv spectral data in './data'
 ├── workflow/                        # batch runners, automation helpers
 └── misc/                            # everything that doesn’t fit elsewhere
 ```
