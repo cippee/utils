@@ -5,9 +5,9 @@ pal = mypalette();
 
 %% ---- Toggle rapidi (sovrascrivono config.m) ------------------------------
 
-normalizeSpectrum = true;      % true/false  - normalizza ogni spettro sul proprio massimo
-stackPlots        = true;      % false = tutti sovrapposti sugli stessi assi
-                               % true  = un subplot per spettro, impilati verticalmente
+normalizeSpectrum = false;      % true/false  - normalizza ogni spettro sul proprio massimo
+stackPlots        = false;      % false = tutti sovrapposti sugli stessi assi
+                                % true  = un subplot per spettro, impilati verticalmente
 
 cfg.normalizeSpectrum = normalizeSpectrum;
 cfg.stackPlots        = stackPlots;
