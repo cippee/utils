@@ -33,6 +33,11 @@ cfg.stackPlots = false;
 cfg.lineWidth = 2.2;
 cfg.fontSize  = 16;
 
+%% ---- Asse X ---------------------------------------------------------------
+%  [] -> automatico, altrimenti [xmin xmax], es. [200 800]
+
+cfg.xLim = [];
+
 %% ---- Colori -------------------------------------------------------------
 %  'random'     -> indici casuali senza ripetizioni (default)
 %  'sequential' -> segue l'ordine della palette (come prima)
