@@ -22,10 +22,21 @@ cfg.normalizeSpectrum = false;      % normalizza su max(|y|)
 cfg.applySmoothing    = false;      % Savitzky-Golay smoothing
 cfg.smoothingWindow   = 7;          % finestra smoothing (dispari)
 
+%% ---- Layout --------------------------------------------------------------
+%  false -> tutti gli spettri sovrapposti sugli stessi assi
+%  true  -> un subplot per spettro, impilati verticalmente
+
+cfg.stackPlots = false;
+
 %% ---- Grafica ------------------------------------------------------------
 
 cfg.lineWidth = 2.2;
 cfg.fontSize  = 16;
+
+%% ---- Asse X ---------------------------------------------------------------
+%  [] -> automatico, altrimenti [xmin xmax], es. [400 4000]
+
+cfg.xLim = [];
 
 %% ---- Colori -------------------------------------------------------------
 %  'random'     -> indici casuali senza ripetizioni (default)
