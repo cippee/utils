@@ -19,4 +19,4 @@ utils/
 
 ## License
 
-MIT (or anything else if I change my mind).
+MIT
