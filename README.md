@@ -1,7 +1,7 @@
 # Utils
 
 A lightweight collection of scripts and small tools I use for data analysis, plotting, file handling, and other routine research tasks.  
-Nothing fancy—just a repo to keep useful scripts in one place, make them reusable, and avoid rewriting the same thing every few months.
+Nothing fancy - just a repo to keep useful scripts in one place, make them reusable, and avoid rewriting the same thing every few months.
 
 ## Structure
 
