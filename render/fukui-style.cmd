@@ -1,5 +1,9 @@
+# Chiara Picarelli, DCMC - Politecnico di Milano
+# chiara.picarelli@polimi.it
+# https://github.com/cippee/utils
+# July 2026
+#
 # fukui-style.cmd -- Chimera render preset for Fukui / orbital cubes
-# Chiara Picarelli / utils
 #
 # Applies the full look (ball-and-stick molecule + signed isosurfaces) to an
 # open structure + cube. Chimera reads only the VOLUME from a .cube (it ignores

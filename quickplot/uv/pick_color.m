@@ -1,3 +1,9 @@
+% Chiara Picarelli, DCMC - Politecnico di Milano
+% chiara.picarelli@polimi.it
+% https://github.com/cippee/utils
+% May 2026
+%
+
 function [color, usedColors] = pick_color(pal, i, cfg, usedColors)
 %PICK_COLOR  Select the color for the i-th curve.
 %

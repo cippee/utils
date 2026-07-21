@@ -1,3 +1,9 @@
+% Chiara Picarelli, DCMC - Politecnico di Milano
+% chiara.picarelli@polimi.it
+% https://github.com/cippee/utils
+% May 2026
+%
+
 function apply_style(cfg)
 %APPLY_STYLE  Set axis labels, direction, ticks, and legend on the current axes.
 

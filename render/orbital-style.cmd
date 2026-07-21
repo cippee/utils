@@ -1,6 +1,10 @@
-# Chimera command preset -- orbitals / Fukui volumes (signed red/blue lobes)
-# Chiara Picarelli, PoliMI, May 2024
-# orbital-style.cmd
+# Chiara Picarelli, DCMC - Politecnico di Milano
+# chiara.picarelli@polimi.it
+# https://github.com/cippee/utils
+# May 2024
+#
+# orbital-style.cmd -- Chimera preset: molecule + signed volume surface
+#                      (orbital / Fukui red/blue lobes)
 #
 # Same look as molecule-style.cmd, plus a signed volume surface.
 # Apply with:  read orbital-style.cmd

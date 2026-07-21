@@ -1,6 +1,10 @@
-# Chimera command preset -- molecules (ball-and-stick, silhouettes, 3-point light)
-# Chiara Picarelli, PoliMI, May 2024
-# molecule-style.cmd
+# Chiara Picarelli, DCMC - Politecnico di Milano
+# chiara.picarelli@polimi.it
+# https://github.com/cippee/utils
+# May 2024
+#
+# molecule-style.cmd -- Chimera preset: ball-and-stick molecule
+#                       (silhouettes, three-point lighting)
 #
 # Apply with:  read molecule-style.cmd
 

@@ -1,3 +1,9 @@
+% Chiara Picarelli, DCMC - Politecnico di Milano
+% chiara.picarelli@polimi.it
+% https://github.com/cippee/utils
+% May 2026
+%
+
 clear; clc; close all;
 
 cfg = config();

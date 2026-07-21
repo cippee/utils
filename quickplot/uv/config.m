@@ -1,3 +1,9 @@
+% Chiara Picarelli, DCMC - Politecnico di Milano
+% chiara.picarelli@polimi.it
+% https://github.com/cippee/utils
+% May 2026
+%
+
 function cfg = config()
 %CONFIG  All settings for the UV-Vis spectra plotting script.
 %        Edit only this file.

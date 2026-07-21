@@ -1,5 +1,9 @@
+# Chiara Picarelli, DCMC - Politecnico di Milano
+# chiara.picarelli@polimi.it
+# https://github.com/cippee/utils
+# July 2026
+#
 # fukui-snapshots.cmd -- save the current view, rotate, save again
-# Chiara Picarelli / utils
 #
 # Run AFTER opening the structure (.fchk) + the .cube and applying the style:
 #     open neutral.fchk

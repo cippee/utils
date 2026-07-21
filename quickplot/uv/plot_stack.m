@@ -1,3 +1,9 @@
+% Chiara Picarelli, DCMC - Politecnico di Milano
+% chiara.picarelli@polimi.it
+% https://github.com/cippee/utils
+% June 2026
+%
+
 function plot_stack(files, pal, cfg)
 %PLOT_STACK  Plot one spectrum per subplot, stacked vertically.
 

@@ -1,3 +1,9 @@
+% Chiara Picarelli, DCMC - Politecnico di Milano
+% chiara.picarelli@polimi.it
+% https://github.com/cippee/utils
+% May 2026
+%
+
 function plot_overlay(files, pal, cfg)
 %PLOT_OVERLAY  Plot all spectra overlaid on the same axes.
 
