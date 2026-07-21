@@ -9,14 +9,15 @@ Nothing fancy - just a repo to keep useful scripts in one place, make them reusa
 utils/
 ├── analysis/                        # data processing, statistics, filters, small helpers
 │   ├── df_excited_states.ipynb      # parser for excited-state output files
-│   └── df_contacts_h5.ipynb         # parser for contacts analysis of h5md sieve.x output
+│   └── df_contacts_h5.ipynb         # parser for contacts analysis of h5md chem-sieve output
 ├── quickplot/                       # plotting scripts, figure templates, quick visualization tools
 │   ├── ir-raman/                    # main.m plots all ir/raman spectral data in './data'
 │   └── uv/                          # main.m plots all uv spectral data in './data'
-├── render/                          # molecular rendering presets & scripts
-│   ├── Picarelli_custom-molecules.cmd   # Chimera preset: b+s, silhouettes, 3-point light
-│   ├── Picarelli_custom-orbitals.cmd    # as above + signed volume (orbital/Fukui) colours
-│   └── fukui/                       # main.pml renders all Fukui .cube in './data' (PyMOL)
+├── render/                          # render presets (.cmd command files)
+│   ├── molecule-style.cmd           # custom Chimera preset b+s molecule, silhouettes, 3-point light
+│   ├── orbital-style.cmd            # as above + signed volume surface (level 0.02)
+│   ├── fukui-style.cmd              # orbital look tuned for Fukui cubes (level 0.004)
+│   └── fukui-snapshots.cmd          # save front view, turn y 90, save again
 ├── workflow/                        # batch runners, automation helpers
 └── misc/                            # everything that doesn’t fit elsewhere
 ```
