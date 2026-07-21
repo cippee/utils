@@ -1,5 +1,5 @@
 function plot_stack(files, pal, cfg)
-%PLOT_STACK  Plotta uno spettro per subplot, impilati verticalmente.
+%PLOT_STACK  Plot one spectrum per subplot, stacked vertically.
 
 figure('Color', 'w');
 t = tiledlayout(length(files), 1, 'TileSpacing', 'compact', 'Padding', 'compact');
@@ -33,9 +33,9 @@ for i = 1:length(files)
     end
 end
 
-%% ---- Allinea l'asse x su tutti i subplot ---------------------------------
-%  Se cfg.xLim non è specificato, usa l'unione dei range dei singoli
-%  spettri invece di lasciare ogni subplot autoscalato per conto suo.
+%% ---- Align x-axis across all subplots ------------------------------------
+% If cfg.xLim is not set, compute the union of all individual ranges
+% instead of leaving each subplot autoscaled independently.
 
 if ~isempty(cfg.xLim)
     xl = cfg.xLim;
@@ -45,6 +45,7 @@ else
 end
 
 set(axHandles, 'XLim', xl);
+if ~isempty(cfg.yLim), set(axHandles, 'YLim', cfg.yLim); end
 linkaxes(axHandles, 'x');
 
 switch lower(cfg.spectrumType)

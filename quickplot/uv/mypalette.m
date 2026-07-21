@@ -1,4 +1,5 @@
 function palette = mypalette()
+%MYPALETTE  Color palette for quickplot. Reference colors by index number.
 
 palette = [
 

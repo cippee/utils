@@ -1,10 +1,10 @@
 function [color, usedColors] = pick_color(pal, i, cfg, usedColors)
-%PICK_COLOR  Seleziona il colore per la curva i-esima.
+%PICK_COLOR  Select the color for the i-th curve.
 %
-%   Modalità (cfg.colorMode):
-%     'random'     - indice casuale senza ripetizioni
-%     'sequential' - segue l'ordine della palette
-%     'manual'     - usa gli indici in cfg.colorIndices
+%   Modes (cfg.colorMode):
+%     'random'     - random index without repetition
+%     'sequential' - follows palette order
+%     'manual'     - uses indices in cfg.colorIndices
 
 nColors = size(pal, 1);
 
@@ -13,7 +13,7 @@ switch cfg.colorMode
     case 'random'
         available = setdiff(1:nColors, usedColors);
         if isempty(available)
-            available  = 1:nColors;     % ricomincia se palette esaurita
+            available  = 1:nColors;     % restart if palette is exhausted
             usedColors = [];
         end
         idx        = available(randi(numel(available)));
@@ -26,13 +26,13 @@ switch cfg.colorMode
 
     case 'manual'
         if isempty(cfg.colorIndices)
-            error('colorMode = manual ma cfg.colorIndices è vuoto.');
+            error('colorMode = manual but cfg.colorIndices is empty.');
         end
         idx   = cfg.colorIndices(mod(i-1, numel(cfg.colorIndices)) + 1);
         color = pal(idx, :);
 
     otherwise
-        error('colorMode non riconosciuto: %s', cfg.colorMode);
+        error('Unrecognized colorMode: %s', cfg.colorMode);
 
 end
 

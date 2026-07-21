@@ -11,8 +11,12 @@ utils/
 │   ├── df_excited_states.ipynb      # parser for excited-state output files
 │   └── df_contacts_h5.ipynb         # parser for contacts analysis of h5md sieve.x output
 ├── quickplot/                       # plotting scripts, figure templates, quick visualization tools
-│   ├── raman-ir/                    # main.m plots all ir/raman spectral data in './data'
+│   ├── ir-raman/                    # main.m plots all ir/raman spectral data in './data'
 │   └── uv/                          # main.m plots all uv spectral data in './data'
+├── render/                          # molecular rendering presets & scripts
+│   ├── Picarelli_custom-molecules.cmd   # Chimera preset: b+s, silhouettes, 3-point light
+│   ├── Picarelli_custom-orbitals.cmd    # as above + signed volume (orbital/Fukui) colours
+│   └── fukui/                       # main.pml renders all Fukui .cube in './data' (PyMOL)
 ├── workflow/                        # batch runners, automation helpers
 └── misc/                            # everything that doesn’t fit elsewhere
 ```

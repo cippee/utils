@@ -11,79 +11,61 @@ function plot_spectrum( ...
     applySmoothing, ...
     smoothingWindow)
 
-%% =========================
-%  IMPORT OPTIONS
-% ==========================
+%% ---- Read data -----------------------------------------------------------
+% Auto-detect delimiter from extension: .csv -> comma, otherwise use cfg.delimiter.
+% readmatrix is used directly to avoid detectImportOptions misidentifying the
+% first data row as a column header.
 
-opts = detectImportOptions(filename);
+[~, ~, ext] = fileparts(filename);
 
-opts.DataLines = [headerLines+1 Inf];
-opts.Delimiter = delimiter;
-
-%% =========================
-%  READ FILE
-% ==========================
-
-T = readtable(filename, opts);
-
-%% =========================
-%  TABLE -> ARRAY
-% ==========================
-
-rawData = table2array(T);
-
-% Conversione robusta se MATLAB legge testo
-if iscell(rawData)
-
-    rawData = cellfun(@str2double, rawData);
-
+% For CSV files force comma; for everything else let readmatrix auto-detect
+% the delimiter — more robust than passing ' ' explicitly for space-separated files.
+if strcmpi(ext, '.csv')
+    % Auto-detect comma vs semicolon (European locale) from the first line.
+    fid = fopen(filename, 'r');
+    firstLine = fgetl(fid);
+    fclose(fid);
+    if contains(firstLine, ';')
+        csvDelim = ';';
+    else
+        csvDelim = ',';
+    end
+    rawData = readmatrix(filename, 'Delimiter', csvDelim, 'NumHeaderLines', headerLines);
+else
+    % CommentStyle '%' skips lines beginning with % (common in spectroscopy output).
+    rawData = readmatrix(filename, 'NumHeaderLines', headerLines, 'CommentStyle', '%');
 end
+rawData = rawData(~any(isnan(rawData), 2), :);  % remove rows with NaN
 
-%% =========================
-%  REMOVE INVALID ROWS
-% ==========================
-
-rawData = rawData(~any(isnan(rawData),2), :);
-
-%% =========================
-%  EXTRACT COLUMNS
-% ==========================
+%% ---- Extract columns -----------------------------------------------------
 
 x = rawData(:, xColumn);
 y = rawData(:, yColumn);
 
-%% =========================
-%  SORTING
-% ==========================
+%% ---- Sort by x -----------------------------------------------------------
 
 [x, idx] = sort(x);
 y = y(idx);
 
-%% =========================
-%  NORMALIZATION
-% ==========================
+%% ---- Normalize -----------------------------------------------------------
 
 if normalizeSpectrum
     y = y ./ max(abs(y));
 end
 
-%% =========================
-%  SMOOTHING
-% ==========================
+%% ---- Smooth --------------------------------------------------------------
 
 if applySmoothing
     y = smoothdata(y, 'sgolay', smoothingWindow);
 end
 
-%% =========================
-%  PLOT
-% ==========================
+%% ---- Plot ----------------------------------------------------------------
 
 [~, name, ~] = fileparts(filename);
 
 plot(x, y, ...
     'LineWidth', lineWidth, ...
-    'Color', color, ...
+    'Color',     color, ...
     'DisplayName', name);
 
 fprintf('Loaded: %s\n', filename);

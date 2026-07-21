@@ -4,3 +4,8 @@
 # data files
 .dat
 *.dat
+*.cube
+
+# generated figures
+quickplot/*/figures/
+render/*/figures/

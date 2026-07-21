@@ -1,5 +1,5 @@
 function plot_overlay(files, pal, cfg)
-%PLOT_OVERLAY  Plotta tutti gli spettri sovrapposti sugli stessi assi.
+%PLOT_OVERLAY  Plot all spectra overlaid on the same axes.
 
 figure('Color', 'w'); hold on; box on;
 
@@ -14,9 +14,8 @@ for i = 1:length(files)
         cfg.normalizeSpectrum, cfg.applySmoothing, cfg.smoothingWindow);
 end
 
-if ~isempty(cfg.xLim)
-    xlim(cfg.xLim);
-end
+if ~isempty(cfg.xLim), xlim(cfg.xLim); end
+if ~isempty(cfg.yLim), ylim(cfg.yLim); end
 
 apply_style(cfg);
 

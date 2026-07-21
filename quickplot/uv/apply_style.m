@@ -1,17 +1,17 @@
 function apply_style(cfg)
-%APPLY_STYLE  Applica label, direzione assi, tick e legenda alla figura corrente.
+%APPLY_STYLE  Set axis labels, direction, ticks, and legend on the current axes.
 
 fs = cfg.fontSize;
 
 switch lower(cfg.spectrumType)
 
     case 'uv-abs'
-        xlabel('Wavelength / nm',    'FontSize', fs, 'FontWeight', 'bold');
-        ylabel('Absorbance (a.u.)',  'FontSize', fs, 'FontWeight', 'bold');
+        xlabel('Wavelength / nm',   'FontSize', fs, 'FontWeight', 'bold');
+        ylabel('Absorbance (a.u.)', 'FontSize', fs, 'FontWeight', 'bold');
 
     case 'uv-molar'
-        xlabel('Wavelength / nm',                          'FontSize', fs, 'FontWeight', 'bold');
-        ylabel('\epsilon / M^{-1} cm^{-1}',                'FontSize', fs, 'FontWeight', 'bold');
+        xlabel('Wavelength / nm',           'FontSize', fs, 'FontWeight', 'bold');
+        ylabel('\epsilon / M^{-1} cm^{-1}', 'FontSize', fs, 'FontWeight', 'bold');
 
 end
 

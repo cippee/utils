@@ -3,26 +3,28 @@ clear; clc; close all;
 cfg = config();
 pal = mypalette();
 
-%% ---- Toggle rapidi (sovrascrivono config.m) ------------------------------
+%% ---- Quick toggles (override config.m) -----------------------------------
 
-normalizeSpectrum = true;      % true/false  - normalizza ogni spettro sul proprio massimo
-stackPlots        = true;      % false = tutti sovrapposti sugli stessi assi
-                                 % true  = un subplot per spettro, impilati verticalmente
+normalizeSpectrum = false;      % true/false  - normalize each spectrum to its own maximum
+stackPlots        = true;       % false = all spectra overlaid on the same axes
+                                 % true  = one subplot per spectrum, stacked vertically
 colorMode         = 'random';   % 'random' | 'sequential' | 'manual'
-colorIndices      = [];         % usato solo se colorMode = 'manual', es. [1 5 9]
-xLim              = [1800 2350];         % [] = automatico, altrimenti [xmin xmax], es. [400 4000]
+colorIndices      = [];         % used only if colorMode = 'manual', e.g. [1 5 9]
+xLim              = [];         % [] = automatic, otherwise [xmin xmax], e.g. [400 4000]
+yLim              = [];         % [] = automatic, otherwise [ymin ymax], e.g. [0 1]
 
 cfg.normalizeSpectrum = normalizeSpectrum;
 cfg.stackPlots        = stackPlots;
 cfg.colorMode         = colorMode;
 cfg.colorIndices      = colorIndices;
 cfg.xLim              = xLim;
+cfg.yLim              = yLim;
 
-%% ---- Caricamento file -----------------------------------------------------
+%% ---- Load files -----------------------------------------------------------
 
 files = load_spectra(cfg);
 
-%% ---- Plot ------------------------------------------------------------
+%% ---- Plot -----------------------------------------------------------------
 
 if cfg.stackPlots
     plot_stack(files, pal, cfg);

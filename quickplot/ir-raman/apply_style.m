@@ -1,5 +1,5 @@
 function apply_style(cfg)
-%APPLY_STYLE  Applica label, direzione assi, tick e legenda alla figura corrente.
+%APPLY_STYLE  Set axis labels, direction, ticks, and legend on the current axes.
 
 fs = cfg.fontSize;
 
