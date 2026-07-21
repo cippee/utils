@@ -2,10 +2,12 @@
 .DS_Store
 
 # data files
-.dat
 *.dat
 *.cube
 
 # generated figures
 quickplot/*/figures/
-render/*/figures/
+render/*.png
+
+# parking area — undecided what to keep
+attic/
