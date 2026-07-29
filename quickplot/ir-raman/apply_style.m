@@ -10,18 +10,28 @@ function apply_style(cfg)
 fs = cfg.fontSize;
 
 switch lower(cfg.spectrumType)
-
     case 'ir'
-        xlabel('Wavenumber / cm^{-1}', 'FontSize', fs, 'FontWeight', 'bold');
-        ylabel('Absorbance (a.u.)',     'FontSize', fs, 'FontWeight', 'bold');
-
+        defaultX = 'Wavenumber / cm^{-1}';
+        defaultY = 'Absorbance (a.u.)';
     case 'raman'
-        xlabel('Raman Shift / cm^{-1}', 'FontSize', fs, 'FontWeight', 'bold');
-        ylabel('Intensity (a.u.)',       'FontSize', fs, 'FontWeight', 'bold');
-
+        defaultX = 'Raman Shift / cm^{-1}';
+        defaultY = 'Intensity (a.u.)';
+    otherwise
+        defaultX = '';
+        defaultY = '';
 end
 
-set(gca, 'XDir', 'reverse');
+if isempty(cfg.xLabel), xLbl = defaultX; else, xLbl = cfg.xLabel; end
+if isempty(cfg.yLabel), yLbl = defaultY; else, yLbl = cfg.yLabel; end
+
+xlabel(xLbl, 'FontSize', fs, 'FontWeight', 'bold');
+ylabel(yLbl, 'FontSize', fs, 'FontWeight', 'bold');
+
+if cfg.xReverse
+    set(gca, 'XDir', 'reverse');
+else
+    set(gca, 'XDir', 'normal');
+end
 
 set(gca, ...
     'FontSize',   fs, ...

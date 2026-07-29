@@ -16,7 +16,7 @@ stackPlots        = true;       % false = all spectra overlaid on the same axes
                                  % true  = one subplot per spectrum, stacked vertically
 colorMode         = 'manual';   % 'random' | 'sequential' | 'manual'
 colorIndices      = [25 26 27]; % used only if colorMode = 'manual', e.g. [19 20 21]
-xLim              = [190 1200]; % [] = automatic, otherwise [xmin xmax], e.g. [200 800]
+xLim              = [250 700]; % [] = automatic, otherwise [xmin xmax], e.g. [200 800]
 yLim              = [];         % [] = automatic, otherwise [ymin ymax], e.g. [0 1]
 
 cfg.normalizeSpectrum = normalizeSpectrum;

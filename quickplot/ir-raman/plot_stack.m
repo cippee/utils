@@ -26,8 +26,9 @@ for i = 1:length(files)
     [~, name, ~] = fileparts(files(i).name);
     title(name, 'FontSize', cfg.fontSize-4, 'Interpreter', 'none');
 
+    xDir = 'normal'; if cfg.xReverse, xDir = 'reverse'; end
     set(gca, ...
-        'XDir',       'reverse', ...
+        'XDir',       xDir, ...
         'FontSize',   cfg.fontSize-2, ...
         'TickDir',    'out', ...
         'Layer',      'top', ...
@@ -56,12 +57,19 @@ linkaxes(axHandles, 'x');
 
 switch lower(cfg.spectrumType)
     case 'ir'
-        xlabel(t, 'Wavenumber / cm^{-1}', 'FontSize', cfg.fontSize, 'FontWeight', 'bold');
-        ylabel(t, 'Absorbance (a.u.)',    'FontSize', cfg.fontSize, 'FontWeight', 'bold');
-
+        defaultX = 'Wavenumber / cm^{-1}';
+        defaultY = 'Absorbance (a.u.)';
     case 'raman'
-        xlabel(t, 'Raman Shift / cm^{-1}', 'FontSize', cfg.fontSize, 'FontWeight', 'bold');
-        ylabel(t, 'Intensity (a.u.)',       'FontSize', cfg.fontSize, 'FontWeight', 'bold');
+        defaultX = 'Raman Shift / cm^{-1}';
+        defaultY = 'Intensity (a.u.)';
+    otherwise
+        defaultX = ''; defaultY = '';
 end
+
+if isempty(cfg.xLabel), xLbl = defaultX; else, xLbl = cfg.xLabel; end
+if isempty(cfg.yLabel), yLbl = defaultY; else, yLbl = cfg.yLabel; end
+
+xlabel(t, xLbl, 'FontSize', cfg.fontSize, 'FontWeight', 'bold');
+ylabel(t, yLbl, 'FontSize', cfg.fontSize, 'FontWeight', 'bold');
 
 end

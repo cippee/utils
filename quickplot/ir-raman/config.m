@@ -39,11 +39,15 @@ cfg.stackPlots = false;
 cfg.lineWidth = 2.2;
 cfg.fontSize  = 16;
 
-%% ---- Axis limits ---------------------------------------------------------
-%  [] = automatic, otherwise [min max]
+%% ---- Axis options --------------------------------------------------------
 
-cfg.xLim = [];          % e.g. [400 4000]
-cfg.yLim = [];          % e.g. [0 1]
+cfg.xReverse = true;    % true = reversed x-axis (standard for IR/Raman)
+cfg.xLim     = [];      % e.g. [400 4000]  ([] = automatic)
+cfg.yLim     = [];      % e.g. [0 1]       ([] = automatic)
+
+%  '' = use default label from spectrumType; any other string overrides it
+cfg.xLabel   = '';      % e.g. 'Wavenumber / cm^{-1}'
+cfg.yLabel   = '';      % e.g. 'Absorbance (a.u.)'
 
 %% ---- Colors --------------------------------------------------------------
 %  'random'     -> random indices without repetition (default)

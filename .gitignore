@@ -4,8 +4,19 @@
 # data files
 *.dat
 *.cube
+*.csv
+quickplot/*/data/*.txt
+quickplot/*/data/*.xlsx
+quickplot/*/data/*.xls
 
-# generated figures
+# generated figures (saved by exportgraphics or saveas in quickplot)
+quickplot/*/*.png
+quickplot/*/*.pdf
+quickplot/*/*.svg
+quickplot/*/*.eps
+quickplot/*/*.fig
+quickplot/*/*.tif
+quickplot/*/*.tiff
 quickplot/*/figures/
 render/*.png
 
