@@ -5,6 +5,8 @@
 *.dat
 *.cube
 *.csv
+*.top
+*.itp
 quickplot/*/data/*.txt
 quickplot/*/data/*.xlsx
 quickplot/*/data/*.xls
