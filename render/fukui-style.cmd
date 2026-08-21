@@ -29,13 +29,15 @@ set silhouetteWidth 3.5
 set silhouetteColor black
 set silhouette
 
-# --- depth cueing (fractions in [0,1]) -------------------------------------
-set depthCue
+# --- depth cueing ----------------------------------------------------------
+# Original values. Do NOT add `set depthCue` or clamp dcEnd to 1.0: forcing the
+# fog on darkens the whole scene and the white hydrogens stop reading.
 set dcColor black
 set dcStart 0.5
-set dcEnd 1.0
+set dcEnd 1.5
 
 # --- lighting (three-point, slightly glossy) -------------------------------
+lighting mode two-point
 lighting mode three-point
 lighting brightness 0.85
 lighting contrast 0.85

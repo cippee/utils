@@ -16,19 +16,20 @@ color byelement
 setattr g display false
 
 # --- silhouette edging -----------------------------------------------------
-set silhouetteWidth 3.5        # outline thickness (px); lower for thinner lines
+# outline thickness (px); lower for thinner lines
+set silhouetteWidth 3.5
 set silhouetteColor black
 set silhouette
 
 # --- depth cueing ----------------------------------------------------------
-# NB: dcStart/dcEnd are fractions in [0,1]; the old dcEnd 1.5 was out of range
-# and silently ignored. Enable depth cue explicitly and keep end <= 1.0.
-set depthCue
+# Original values. Do NOT add `set depthCue` or clamp dcEnd to 1.0: forcing the
+# fog on darkens the whole scene and the white hydrogens stop reading.
 set dcColor black
 set dcStart 0.5
-set dcEnd 1.0
+set dcEnd 1.5
 
 # --- lighting (modelled three-point, slightly glossy) ----------------------
+lighting mode two-point
 lighting mode three-point
 lighting brightness 0.85
 lighting contrast 0.85

@@ -19,7 +19,7 @@ stackPlots        = true;       % false = all spectra overlaid on the same axes
 colorMode         = 'manual';   % 'random' | 'sequential' | 'manual'
 colorIndices      = [25 26 27]; % used only if colorMode = 'manual', e.g. [19 20 21]
 xReverse          = false;      % true = reversed x-axis (standard for IR/Raman)
-xLim              = [2100 2250]; % [] = automatic, otherwise [xmin xmax], e.g. [400 4000]
+xLim              = [1000 3500]; % [] = automatic, otherwise [xmin xmax], e.g. [400 4000]
 yLim              = [];          % [] = automatic, otherwise [ymin ymax], e.g. [0 1]
 xLabel            = '';          % '' = default from spectrumType, or e.g. 'Wavenumber / cm^{-1}'
 yLabel            = '';          % '' = default from spectrumType, or e.g. 'Absorbance (a.u.)'
