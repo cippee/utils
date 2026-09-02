@@ -1,0 +1,30 @@
+# Chiara Picarelli, DCMC - Politecnico di Milano
+# chiara.picarelli@polimi.it
+# https://github.com/cippee/utils
+# September 2026
+#
+# Come orbital-style ma level 0.004: le densita' di Fukui sono piccole,
+# a 0.02 non si vede nulla.
+# Uso:  open fukui.cube  ->  open fukui-style.cxc  ->  open fukui-snapshots.cxc
+
+style ball
+color byelement
+hide pseudobonds
+
+graphics silhouettes true width 2.0 color black
+
+lighting depthCue true
+lighting depthCueColor black
+lighting depthCueStart 0.5
+lighting depthCueEnd 1.5
+
+# lighting: resa approssimata di Chimera, da rifinire a occhio
+lighting
+lighting intensity 0.85
+material specularReflectivity 0.5
+material exponent 128
+
+volume #1 step 1 style surface level -0.004 level 0.004 color #4f76ff color #ff141d
+transparency #1 20 target s
+
+view

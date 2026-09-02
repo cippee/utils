@@ -1,0 +1,28 @@
+# Chiara Picarelli, DCMC - Politecnico di Milano
+# chiara.picarelli@polimi.it
+# https://github.com/cippee/utils
+# September 2026
+#
+# Ball-and-stick + silhouette + look glossy.  Uso: open molecule-style.cxc
+
+style ball
+color byelement
+hide pseudobonds
+
+graphics silhouettes true width 2.0 color black
+
+lighting depthCue true
+lighting depthCueColor black
+lighting depthCueStart 0.5
+lighting depthCueEnd 1.5
+
+# lighting: resa approssimata di Chimera, da rifinire a occhio
+lighting
+lighting intensity 0.85
+material specularReflectivity 0.5
+material exponent 128
+
+view
+
+# sfondo trasparente = opzione di save:
+# save mol.png supersample 3 transparentBackground true

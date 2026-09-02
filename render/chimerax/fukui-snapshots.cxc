@@ -1,0 +1,14 @@
+# Chiara Picarelli, DCMC - Politecnico di Milano
+# chiara.picarelli@polimi.it
+# https://github.com/cippee/utils
+# September 2026
+#
+# Salva la vista, ruota di 90 attorno a y, salva di nuovo. Stessa scala.
+# save rende off-screen alla dimensione richiesta: rinomina gli output per non sovrascrivere.
+
+windowsize 1200 800
+view
+
+save fukui_front.png width 2400 height 1600 supersample 3 transparentBackground true
+turn y 90
+save fukui_y90.png width 2400 height 1600 supersample 3 transparentBackground true

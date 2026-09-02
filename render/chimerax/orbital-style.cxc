@@ -1,0 +1,31 @@
+# Chiara Picarelli, DCMC - Politecnico di Milano
+# chiara.picarelli@polimi.it
+# https://github.com/cippee/utils
+# September 2026
+#
+# molecule-style + isosuperficie con segno (lobi rosso/blu, level 0.02).
+# Uso:  open orbital.cube   (atomi+volume nel modello #1)  ->  open orbital-style.cxc
+# Se apri .fchk poi .cube, il volume e' #2: cambia #1 in #2 sotto.
+
+style ball
+color byelement
+hide pseudobonds
+
+graphics silhouettes true width 2.0 color black
+
+lighting depthCue true
+lighting depthCueColor black
+lighting depthCueStart 0.5
+lighting depthCueEnd 1.5
+
+# lighting: resa approssimata di Chimera, da rifinire a occhio
+lighting
+lighting intensity 0.85
+material specularReflectivity 0.5
+material exponent 128
+
+# step 1 = piena risoluzione (niente lobi sgranati)
+volume #1 step 1 style surface level -0.02 level 0.02 color #4f76ff color #ff141d
+transparency #1 20 target s
+
+view
