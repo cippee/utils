@@ -1,0 +1,11 @@
+.comment axes.bild -- XYZ reference-frame axes at the origin
+.comment open in Chimera/ChimeraX
+.comment x = red, y = green, z = blue. Arrows 3 A long; edit the "3" to rescale.
+.comment arrow: x1 y1 z1  x2 y2 z2  shaft_r  head_r  shaft_fraction
+
+.color red
+.arrow 0 0 0  3 0 0  0.1 0.25 0.75
+.color green
+.arrow 0 0 0  0 3 0  0.1 0.25 0.75
+.color blue
+.arrow 0 0 0  0 0 3  0.1 0.25 0.75
