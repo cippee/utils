@@ -24,3 +24,9 @@ render/*.png
 
 # parking area — undecided what to keep
 attic/
+
+# fchk2dipole: Gaussian inputs + generated geometry/arrows (keep only the axes template)
+*.fchk
+*.xyz
+*.bild
+!render/axes.bild
