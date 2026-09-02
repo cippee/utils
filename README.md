@@ -22,6 +22,14 @@ utils/
 └── workflow/                        # batch runners, automation helpers
 ```
 
+## quickplot
+
+MATLAB spectra plotting, config-driven. `uv/` and `ir-raman/` each read every
+data file in their `./data` folder and plot it - `uv/main.m` for UV-Vis,
+`ir-raman/main.m` for IR and Raman. Set the defaults in `config.m`, or use the
+quick toggles at the top of `main.m` (overlay vs stacked, normalization, colors,
+axis limits), then run `main.m`.
+
 ## render
 
 UCSF Chimera presets live in `render/chimera/` (`.cmd`); their ChimeraX ports are
