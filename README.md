@@ -81,7 +81,7 @@ python3 fchk2dipole.py mol.fchk
 Coordinates, dipole and center of mass all come from the same fchk (its input
 orientation - the frame cubegen writes the `.cube` in), so the arrow overlays the
 molecule with no rotation. The dipole keeps the Gaussian convention (points from
-- to +). Flags: `-s` arrow scale in Angstrom/Debye (default 1.5, a negative value
+- to +). Flags: `-s` arrow scale in Angstrom/Debye (default 1, a negative value
 flips the arrow), `--tail origin|com` (default com). Open the outputs in ChimeraX
 with `open`. Standard library only.
 

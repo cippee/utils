@@ -10,7 +10,7 @@
 # named after the fchk, written next to it.
 #
 #   fchk2dipole.py trans.fchk   ->  trans.xyz  trans-dipole.bild  trans-axes.bild
-#   -s SCALE            dipole arrow scale, Angstrom/Debye (default 1.5)
+#   -s SCALE            dipole arrow scale, Angstrom/Debye (default 1)
 #   --tail origin|com   dipole arrow tail (default com)
 
 import sys, re, os, argparse
@@ -34,7 +34,7 @@ def block(txt, label, n):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('fchk')
-    ap.add_argument('-s', '--scale', type=float, default=1.5)
+    ap.add_argument('-s', '--scale', type=float, default=1)
     ap.add_argument('--tail', choices=('com', 'origin'), default='com')
     a = ap.parse_args()
 
