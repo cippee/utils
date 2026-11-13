@@ -43,5 +43,10 @@ set bgTransparency
 # frame the molecule
 focus
 
+# --- labels ----------------------------------------------------------------
+# black atom and residue labels (applies to labels created later too)
+setattr a labelColor black
+setattr r labelColor black
+
 # --- to save an image, uncomment (supersample = anti-aliasing) -------------
 # copy file newframe.png png supersample 3
